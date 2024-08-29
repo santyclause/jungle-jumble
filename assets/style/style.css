@@ -1,1 +1,36 @@
-/* BASIC STYLES HERE */
+body {
+  background-image: url(https://s3-alpha-sig.figma.com/img/3d65/deb2/3ae0cacdce9b38d902e8dff73e98ee46?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MY3oiwu-94fZFBmwFv3bqSAbN7C7VvPFs~bCYKbHbjgeotLOgaBoh2mJ1XW7E3PGHYVxjZtsxQKb4cqZJ30RBIrgvLoURd9ldLCrBWMwexSvAvb-UhJCfmrqChgq7CeUQRBc6tcx3~B~h-oHDwzM3oDNdg-SkRpd65YeUPB-1tQRsAzNxwPbyyVGh66W1Z93xEXccVNonWeWVg9xAx7SuO-lSkQMxkh8vwlJSRL5x9PQcRgcXQciYbGEFWsPohMGdluCcxUbbaKkGRgrUfQUE9hQ71gfg8K82kmDX3sZdZVLnlBL9O7CkQtWHfRdlpP3XGvbxbf8Z1zD6XKz1QHb-g__)
+}
+
+textarea {
+  width: 100%
+}
+
+.mcard {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em;
+}
+
+.start-button {
+  background-color: #dcb700;
+  width: 60%;
+}
+
+.red-shad {
+  box-shadow: 10px -10px 0px #FF9999;
+}
+
+.green-shad {
+  box-shadow: -10px -10px 0px #99FF99;
+}
+
+.purple-shad {
+  box-shadow: -10px 10px 0px #AA66AA;
+}
+
+.yellow-shad {
+  box-shadow: 10px 10px 0px #dcb700;
+}

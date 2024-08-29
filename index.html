@@ -12,42 +12,68 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>jungle-jumble</title>
+  <title>Jungle Jumble</title>
 </head>
 
 <body>
   <!-- SECTION -->
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
-      <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ml-2">jungle-jumble</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-          <!-- <a href="#/about" class="nav-link">About</a> -->
+  <header class="container-fluid">
+    <section class="row">
+      <div class="col-md-4">
+        <div class="mcard red-shad">
+          <h1>Jungle Jumble</h1>
         </div>
       </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </nav>
+    </section>
   </header>
 
-  <!-- SECTION -->
-  <main>
-      <!-- <section id="router-view"></section> -->
+  <main class="container-fluid">
+    <!-- SECTION main content -->
+    <section class="row">
+      <div class="col-md-8 container-fluid">
+        <!-- SECTION Left column content-->
+        <section class="row">
+          <div class="col-12">
+            <div id="active-jumble" class="mcard green-shad">
+              <h3>Select a jumble on the right! -></h3>
+              <!-- <div class="d-flex justify-space-between"><span>Jumble</span><span>Time</span></div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptates omnis officia.</p> -->
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mcard purple-shad">
+              <p class="text-center">Timer: <span id="timer">0.0</span></p>
+              <textarea id="userInput" onfocus="app.JumbleController.startTimer()"
+                oninput="app.JumbleController.checkCorrect()"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- !SECTION -->
+      </div>
+      <div class="col-md-4">
+        <div class="mcard yellow-shad">
+          <div>
+            <h4>Jumbles!</h4>
+            <div class="container-fluid" id="jumble-list">
+              <!-- NOTE Jumbles show up here-->
+            </div>
+          </div>
+          <div>
+            <h6>Create Jumble</h6>
+            <form>
+              <input type="text" placeholder="Name">
+              <textarea placeholder="Jumble"></textarea>
+              <button type="submit">create+</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- SECTION -->
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
-    </div>
+  <footer>
+
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
