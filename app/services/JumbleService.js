@@ -7,6 +7,28 @@ class JumbleService {
     let foundJumble = jumbles.find((jumble) => jumble.id == selectedId)
     AppState.activeJumble = foundJumble
   }
+
+  stopTimer() {
+    AppState.activeJumble.endTime = AppState.currentTime.toFixed(1)
+    this.compareTimes();
+    AppState.currentTime = 0
+  }
+
+  resetTimer() {
+    AppState.currentTime = 0;
+  }
+
+  compareTimes() {
+    let fastestTime = AppState.activeJumble.fastestTime
+    if (fastestTime == "No Record") {
+      fastestTime = 0;
+    }
+    if (AppState.currentTime > fastestTime) {
+      AppState.activeJumble.fastestTime = AppState.currentTime.toFixed(1)
+      AppState.emit('jumbles')
+      AppState.emit('activeJumble')
+    }
+  }
 }
 
 export const jumbleService = new JumbleService()

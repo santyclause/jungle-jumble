@@ -13,7 +13,7 @@ export class Jumble {
 
   get listTemplate() {
     return `
-    <section class="row mb-3" role="button" onclick="app.JumbleController.selectJumble('${this.id}')">
+    <section class="row mb-3" role="button" onclick="app.JumbleController.selectJumble('${this.id}'), app.JumbleController.startTimer()">
       <div class="col-3"><div class=" btn start-button">Start</div></div>
       <div class="col-3">${this.name}</div>
       <div class="col-3">${this.fastestTime}</div>

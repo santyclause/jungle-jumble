@@ -27,6 +27,7 @@ export class JumbleController {
 
   selectJumble(selectedId) {
     jumbleService.selectJumble(selectedId)
+    this.resetTimer();
   }
 
   checkCorrect() {
@@ -43,14 +44,12 @@ export class JumbleController {
   }
 
   startTimer() {
-    if (AppState.activeJumble == null) {
-      return
-    }
     if (!this.timerStarted) {
       AppState.currentTime = 0
       this.interval = setInterval(this.incrementTimer, 100)
       this.timerStarted = true;
     }
+    document.getElementById('userInput').focus()
   }
 
   incrementTimer() {
@@ -60,6 +59,18 @@ export class JumbleController {
 
   stopTimer() {
     clearInterval(app.JumbleController.interval)
+    jumbleService.stopTimer()
+    this.timerStarted = false;
+    const userText = document.getElementById('userInput')
+    userText.value = '';
+  }
+
+  resetTimer() {
+    clearInterval(app.JumbleController.interval)
+    jumbleService.resetTimer();
+    this.timerStarted = false;
+    const userText = document.getElementById('userInput')
+    userText.value = '';
   }
 
 }
