@@ -6,7 +6,7 @@ export class Jumble {
     this.id = data.id || generateId()
     this.content = data.content
     this.name = data.name
-    this.fastestTime = "No Record"
+    this.fastestTime = data.fastestTime || "No Record"
     this.endTime = null
     this.startTime = null
   }

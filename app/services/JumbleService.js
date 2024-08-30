@@ -1,4 +1,7 @@
 import { AppState } from "../AppState.js"
+import { Jumble } from "../models/Jumble.js"
+import { saveState } from "../utils/Store.js"
+import { loadState } from "../utils/Store.js"
 
 class JumbleService {
 
@@ -25,10 +28,19 @@ class JumbleService {
     }
     if (AppState.currentTime < fastestTime) {
       AppState.activeJumble.fastestTime = AppState.currentTime.toFixed(1)
+      this.saveJumbles()
       AppState.emit('jumbles')
       AppState.emit('activeJumble')
     }
-    console.log(fastestTime)
+  }
+
+  saveJumbles() {
+    saveState('jumbles', AppState.jumbles);
+  }
+
+  loadJumbles() {
+    const jumblesFromStorage = loadState('jumbles', [Jumble])
+    AppState.jumbles = jumblesFromStorage
   }
 }
 

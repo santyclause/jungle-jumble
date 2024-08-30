@@ -8,6 +8,7 @@ export class JumbleController {
     this.timerStarted = false
     AppState.on('activeJumble', this.drawActiveJumble)
     AppState.on('jumbles', this.drawJumbleList)
+    jumbleService.loadJumbles();
     this.drawJumbleList()
   }
 
