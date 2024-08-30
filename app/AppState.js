@@ -1,10 +1,10 @@
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
-import { Jumble } from './Models/Jumble.js'
+import { Jumble } from './models/Jumble.js'
 
 class ObservableAppState extends EventEmitter {
 
-  /** @type {import('./Models/Jumble.js').Jumble[]} @param name:String; content:String;*/
+  /** @type {import('./models/Jumble.js').Jumble[]} @param name:String; content:String;*/
   jumbles = [
     new Jumble({ name: '🐒 Jumble', content: "Monkeys go bananas for fruit salad, especially when it's filled with juicy pineapples." }),
     new Jumble({ name: '🦍 Jumble', content: "The gorilla juggled berries and grapes, adding them to the fruit salad one-by-one. As nimble as a spider monkey, the typist skillfully typed sentence after sentence." }),

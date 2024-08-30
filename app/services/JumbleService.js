@@ -21,13 +21,14 @@ class JumbleService {
   compareTimes() {
     let fastestTime = AppState.activeJumble.fastestTime
     if (fastestTime == "No Record") {
-      fastestTime = 0;
+      fastestTime = 10000;
     }
-    if (AppState.currentTime > fastestTime) {
+    if (AppState.currentTime < fastestTime) {
       AppState.activeJumble.fastestTime = AppState.currentTime.toFixed(1)
       AppState.emit('jumbles')
       AppState.emit('activeJumble')
     }
+    console.log(fastestTime)
   }
 }
 
